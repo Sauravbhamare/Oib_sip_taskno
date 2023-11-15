@@ -1,11 +1,22 @@
-function convertToCelsius() {
-    var fahrenheitInput = document.getElementById("fahrenheit").value;
-    var celsiusResult = (fahrenheitInput - 32) * 5 / 9;
-    document.getElementById("result").innerText = "Result in Celsius: " + celsiusResult.toFixed(2) + " °C";
+const display = document.getElementById("display");
+
+function appendToDisplay(value) 
+{
+display.value += value;
 }
 
-function convertToFahrenheit() {
-    var celsiusInput = document.getElementById("celsius").value;
-    var fahrenheitResult = (celsiusInput * 9 / 5) + 32;
-    document.getElementById("result").innerText = "Result in Fahrenheit: " + fahrenheitResult.toFixed(2) + " °F";
+function clearDisplay() 
+{
+display.value = "";
+}
+
+function calculate() 
+{
+try 
+{ 
+display.value = eval(display.value);
+} catch (error) 
+{
+display.value = "Error";
+}
 }
